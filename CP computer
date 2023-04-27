@@ -1,0 +1,30 @@
+Crackme1:
+Baixa o arquivo entra no terminal do kali, acessa a pasta Downloads com cd > cd Downloads. Pega acesso da pasta com chmod +x crackme1 > ./index.crackme1 e pega a flag que estava escondida.
+
+Crackme2: 
+Entra no terminal, pega acesso com chmod +x crackme2 depois de ter entrado na pasta de Download, irá usar strings index.crackme2 o texto que está dentro do arquivo lá vai estar a senha secreta. Assim que pega-lá você
+vai entrar no arquivo com a senha ./index.crackme2 (senha).
+
+Crackme3:
+Vai usar chmod para ter acesso do arquivo igual os acima e vai usar strings para ler o texto do arquivo a senha vai estar em base 64, só copiar com ctrl+shift+c e converter em um site de base 64, lá vai estar sua flag.
+
+Crackme4:
+Primeiro você vai fazer as mesmas coisas que fez nos outros que é pegar acesso com chmod, e acessa, quando acessar vai estar dizendo que a string está escondida e usaram strcmp.
+Agora você vai baixar o gdb na seu terminal com 'sudo apt install gdb' após isso, vai dar o comando gdb ~/Downloads/index.crackme4(se não souber o '~' no teclado americano fica nas aspas ai é só dar shift+(aspas).
+Você vai dar o comando gdb index.crackme4 e logo após vai dar o comando 'info functions' Vai aparecer uma lista em hexadecimal e binário você vai procurar o número que do lado direito vai estar escrito strcmp.
+Daí vai dar o comando (gdb) b *0x0000000000400520 para criar um breakpoint e vai colocar o comando'run test'. Após isso vai usar o comando info registers com o comando 'x/s (numero do rax) vai aparecer sua flag'.
+
+Crackme5:
+Primeiro você vai fazer as mesmas coisas que fez nos outros que é pegar acesso com chmod, e acessa, quando acessar vai estar dizendo pra colocar teu input você coloca test. Vai fazer as mesmas coisas que fez no crack4
+Vai procurar pelo numero que está na linha de strncmp@plt, vai dar run colocar o input e escrever x/s (numero que está na linha.
+
+Crackme6:
+Instalar ghidra e jdk 'sudo apt install default-jdk', quando baixar o ghidra vai usar o comando cd Downloads ai quando entrar vai dar 'unzip nome_do_arquivo.zip'. Inicia o ghidar pelo termninal ./ghidraRun. Vai fazer
+o caminho de main > compare_pwd > my_secure_test lá vai estar sua senha.
+
+Crackme7:
+Vai direto pra main lá vai ter um número em hexadecimal você vai converter para decimal, vai acessar o arquivo pelo terminal vai selecinar a opção de adicionar numeros e colocar o decimal que logo após ele vai te dar 
+a flag.
+
+Crackme8: 
+Fazer a mesma coisa que o crackme7 e quando foi entrar no arquivo do terminal vai usar o comando: ./index.crackme8 (senha) que você irá receber a flag
